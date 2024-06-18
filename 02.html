@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        const parent = document.querySelector('.parent');
+        // console.log(parent);
+        // console.log(parent.children);
+        // console.log(parent.children[1].innerHTML);
+
+        // for(let i = 0 ; i < parent.children.length ; i++) {
+        //     console.log(parent.children[i].innerHTML);
+        //     console.log(parent.children[i].innerText);
+        //     console.log(parent.children[i].textContent);
+        // }
+
+        parent.children[1].style.color = "orange";
+        
+
+        // ye niche wali dono lines parent element ke 1st and last children Element ko pick krne ke liye hai
+        // console.log(parent.firstElementChild);
+        // console.log(parent.lastElementChild);
+
+
+     
+        const dayOne = document.querySelector('.day');
+        // console.log(dayOne);
+
+
+        // ye niche waali line child sai parent element par jaane ke liye hai
+        // console.log(dayOne.parentElement);
+
+        // current Element ke just aage wale Element par jaane ke liye ye niche wali line
+        // console.log(dayOne.nextElementSibling);
+
+        
+        // v.v.v.v.v.v Imp -> YAHI NICHE WAALI LINE (Line no.50) LOGO KO BOHOT CONFUSING KRTI HAI. YAHI REACT MAI BHI YEH USE HOTA HAI
+        // Parent Element ki kitni nodes hai uske liye niche waali line mai code hai
+        console.log("Nodes : " , parent.childNodes);
+        // uppr waali line mai nodes calculate kese hoti hai -> har ekk line ko Node maante hai even ekk line break hua too usse bhi ekk node maanege. but continuous ekk saath ekk sai jyada line breaks hue too usse ekk nee NOde maanege
+
+
+
+    </script>
+</body>
+</html>
