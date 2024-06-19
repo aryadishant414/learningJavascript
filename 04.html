@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color : #fff">
+    <ul class="language" >
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    // Function to create a List Element (METHOD1)
+    // NOte : this method we use in rare situation because it is less optimised
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+
+    // function call
+    addLanguage('python');
+    addLanguage('typescript');
+
+
+
+
+    // Function to create a List Element (METHOD2)
+    // WE prefer to choose this method as it is more optimised kyoki ye function  "TextNode" ko create kar rha hai which means chahe function parameters mai kuch bhi pass ho jaae ye ussko simple text ki tarah hee treat karega. example ke liye (line 41) wala code chalake dekhlo yaha funciton parameter mai h1 pass ho rha hai and hame pata hai text node isko plain text ki tarah treat karega so ye console par as it is print kar dega with h1 tag.
+    function addOptimisedLanguage(langName) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+
+    // function call
+    addOptimisedLanguage('golang');
+
+    addOptimisedLanguage('<h1>hello</h1>');
+
+    
+    // the very basic difference in both the upper functions is that : 
+    // addLanguage() -> inside this function we have written li.innerHTML. "li.innerHTML" poore html structure mai saare elements par traversing hoti hai
+    // addOptimisedLanguage -> iss funciton mai poore elemets par traversing nahi hoti hai yaha iss function mai ham sidha ekk textNode create karr rhe hai and usko li mai append karwa rahe hai
+    
+
+
+
+    // Edit from existing elements (Replacing existing elements)  Example1
+    const secondLanguage = document.querySelector('li:nth-child(2)');
+    const newLi = document.createElement('li');
+    newLi.textContent = 'Mojo';
+    secondLanguage.replaceWith(newLi);
+
+
+    // Edit (Example 2)
+    const firstLanguage = document.querySelector('li:first-child');
+    firstLanguage.outerHTML = '<li>Typesciptt</li>';
+
+
+    // Lets Remove the existing elements
+    const lastLanguage = document.querySelector('li:last-child');
+    lastLanguage.remove();
+    
+</script>
+</html>
