@@ -1,0 +1,5 @@
+// Set Interval Function
+
+* The setInterval() method calls a function at specified intervals (in milliseconds).
+
+see the syntax from w3 schools
