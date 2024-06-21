@@ -6,6 +6,126 @@
     <title>Events Basics1</title>
 </head>
 <body style="background-color: #414141; color: aliceblue;">
-    
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images" style="border: 2px solid red;">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
 </body>
+<script>
+    // console.log('Hello from Events Basics 1');  // just for check
+   
+
+    // This way is not good coz onclick wala method hame limited features deta hai and ye aaj ke time par itna koi use bhi nhi krte hai but but iski jagah hame "addEventListener" use krna chahiye isss method mai jyada features hote hai bohot saare features jo ki 'onclick' method mai nhi hote
+    // document.getElementById('owl').onclick = function() {
+    //     alert("owl clicked");
+    // }
+
+
+    // ye niche wale 2 methods jo ki pehle use hote the
+    // attaachEvent()
+    // jQuery - onEventListener
+
+
+    // Study below all these. Ye sab hame pointer Event ke andar milenge. abb pointer event kaha milega? => jab apan addEventListener lagaenge tab anonhymous function ke andr jo parameter (ex : 'e') pass krte hai na uss paramter ko console par print karwa dena so hame pointer event mill jaaega
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    // document.getElementById('images').addEventListener('click' , function(e){
+    //     console.log('Clicked Inside the ul');
+    // } , false);
+
+
+    // document.getElementById('owl').addEventListener('click' , function(e){
+    //     // console.log(e);  // this will give the output on console as => pointer event
+    //     console.log('owl clicked');
+    //     e.stopPropagation();
+    // } , false);
+
+
+    // document.getElementById('google').addEventListener('click' , function(e){
+    //     e.preventDefault(); // means click hone ke baad uss site par naa jaae and yahipe ruk jaae
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    // } , false);
+
+
+    // document.querySelector('#images').addEventListener('click' , function(e){
+    //     // console.log(e);
+    //     // console.log(e.target); // jispe click hua hai uska poora element dega
+    //     // console.log(e.target.tagName); // jispe click kiya hai uska konsa tag hai wo baatega yeh
+    //     if(e.target.tagName === 'IMG') {
+    //         // console.log((e.target.id)); // prints the id of jispe click hua hai
+    //         let removeIt = e.target.parentNode; // hame images ko remove krna hai but sirf images ko remove krne sai too unki 'li' jisme ye selected image padi hai wo too khaali reh jaaegi isliye hame iss selected image ki parent node ko remove krna hai jisse iski parent node ke andar jo ye selected image hai wo bhi remove ho jaae. ISLIYE hamne yeh step likha hai
+    //         removeIt.remove();
+    //     }
+    // } , false);
+
+    // Ho skta hai code kuch likhna bhul gaya hou isme halaki esaa hoga too nhi but fiir bhi for confirmation go to -> "chai aur code" ki github repository and code vha sai dekh lena
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*Important Notes
+    // poore lecture mai sabse important yahi note tha jo ki ham bhull skte hai
+    
+    1.*/
+        // document.getElementById('images').addEventListener('click' , function(e){
+        //     console.log('Ul clicked');  // ye too direct console mai output de dega ki ul clicked jab bhi ul mai click hoga
+        // } , false);
+
+
+        // document.getElementById('owl').addEventListener('click' , function(){
+        //     console.log('owl clicked'); // agr ye akela hee hota ('2') wala point tab too ye bhi simply print krta ki owl clicked
+        // } , false);
+
+
+        // NOw what happens if '1. and 2.' wale dono points ek saath likhe hue ho?
+        // tab ye output dega : pehle output mai aayega jispe click hua hai uska msg and then uske baad dusra wala msg. iss concept ko ham "bubbling phase kehte hai". mtlb ki sabse andar wala box ke command ko read krta hai then uske bahar wale box ka msg then usse bahar wala and so on. mtlb ki chote sai bada jaata hai
+
+        // too yahi concept aata hai concept of => "Event Propogation" ka concept
+        /* Event Propogation => jo ham ye addEventListener mai false value pass kar rhe hai baar baar . isko use krne ka reason hai to control the event propogation. bydefault false value hee hoti hai which means ki it will follow "bubbling phase". too yeh false value nhi bhi likhege too bhi chalega coz it is by default value.
+        BUT agr hamne false ki jagah true  pass krdiya too vha => "Capturing Phase" aa jaata hai mtlb ki pehle sabse bahar wala element print hoga (jispe bhi click hua hoga) then uske andar ka then use andar ka.
+
+        
+        * Capturing Phase (true): Events are captured from the outermost element to the innermost element.
+        * Bubbling Phase (false): Events bubble from the innermost element to the outermost element.
+        
+        */
+
+
+        // Method 2 agar ham false ko true nhi krna chahte hai too ekk or tareeka hai : lekin isme hame sirf vhi value print hogi jispe hamne click kiya hai koi 2nd value print nhi hogi
+        document.getElementById('images').addEventListener('click' , function(e){
+            console.log('Ul clicked');
+            e.stopPropagation();
+        } , false);
+
+
+        document.getElementById('owl').addEventListener('click' , function(e){
+            console.log('owl clicked');
+            e.stopPropagation();
+        } , false);
+
+</script>
 </html>
