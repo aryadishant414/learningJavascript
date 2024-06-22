@@ -1,0 +1,6 @@
+* Sync (Synchronous Javascript) => BLOCK the flow of the Program. mtlb ki agle program ko execute hone ke liye wait krna padega
+ previous program ke complete hone ka. 
+
+* Async (Asynchronous Javascript) => Does NOT BLOCK the program execution. mtlb ki agr koi ekk program ko execute hone mai thora
+ time lag rha hai too jab tak agla program execute ho skta hai means simultaneously multiple programs run ho skta hai no program has to 
+ wait for previous programs to complete. 
