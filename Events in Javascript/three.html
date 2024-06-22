@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval and Clear Interval Function in Javascript</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    console.log('Hello from Set Interval and Clear Interval function'); // just to test hamne yeh likha hai
+
+
+    // // normal function
+    // function print(str) {
+    //     console.log(str);
+    // }
+    // print('Dishant');
+
+
+    // Baar baar ekk hee funciton ko execute krwaega yeh setInterval
+    // setInterval(function(){
+    //     console.log('HEllo Jee Kya Haal Chaalll');
+    // } , 2000);
+
+    // To stop this baar baar execution of the upper setInterval function
+    // we will be using clearInterval() function. clear interval ko use krne ke liye hame uss function ka reference lena padeg jisko hame stop krwana hai. so store uppr wala set interval function in a variable.
+
+
+    // ye line number 31 sai 35 tak ke code ko agr execute krenge too hamara set interval wala function ekk baar bhi run nhi hoga wo immediate stop ho jaaega. kyoki stop interval immediately run hota hai isme koi delay nhi krta hai ye
+    // const intervalId = setInterval(function(){
+    //     console.log('Hello Bhai Sahab');
+    // } , 2000);
+
+    // clearInterval(stopInterval);
+
+
+    // but agr ham chahte hai ki atleast ekk baar too hamara setInterval wala function execute ho and uske baad bhale hee stop ho jaae too use setTimeout function kyoki settimeout function ka kaam hee yahi hota hai ki wo atleast ek baar too execute ho
+        // const intervalId = setInterval(function(){
+        //     console.log('Hello Bhai Sahab');
+        // } , 2000);
+
+        // setTimeout(function(){
+        //     clearInterval(intervalId);
+        // } , 2100);
+
+
+
+        // Task : START Button par click krne sai setInterval() wala function active hona chahiye and STOP Button par click krne sai clearInterval() wala function active hona chaiye
+        // lets see
+        let intervalId;
+        document.getElementById('start').addEventListener('click' , function(){
+            // console.log('Hello');
+                intervalId = setInterval(function(){
+                console.log('Button Activate');
+            } , 2000);
+        } , false);
+
+        document.getElementById('stop').addEventListener('click' , function(){
+            clearInterval(intervalId);
+            console.log('Button Deactivate');
+        } , false);
+
+        
+
+
+
+
+
+</script>
+</html>
+
+
+
