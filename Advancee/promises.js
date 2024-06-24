@@ -141,4 +141,5 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 
 * finally() => ye method ka mtlb hota hai ki ya too promise fullfill hoga ya fiir nhi hoga. mtlb ki finally wala method too chalega hee chalega and ye yahi bataega ki ya too promise fullfill hua hai and ya fiir nhi hua hai
 
+
 */
