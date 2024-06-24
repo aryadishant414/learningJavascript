@@ -133,6 +133,7 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 
 // NOTES : 
 /*
+
 * Promise : The Promise is an Object. jo ki batata hai ki ya too ye promise fullfill hoga ya fiir nhi hoga.
 
 * agr promise fullfill hua too wo 'resolve' method ke pass jaaega and agr promise fullfill nhi hua too wo 'reject' method ke pass jaaega
