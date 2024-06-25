@@ -33,3 +33,6 @@ console.log(chai instanceof Teacher);
 console.log(masalaChai instanceof User);
 console.log(chai instanceof User);
 console.log(Teacher instanceof User);
+console.log(User instanceof Teacher);
+
+// ( chai instanceof Teacher )=> mtlb ki kya chai teacher class sai hee bani hai? means kya chai instance hai Teacher class ka
