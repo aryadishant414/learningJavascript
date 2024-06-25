@@ -1,0 +1,44 @@
+<!-- // Usage of 'Super and Bind':
+// * super is only used inside classes that extend another class.
+// * bind can be used on any function, not limited to class methods.
+
+// Functionality:
+// * super is syntactic sugar for class-based inheritance and method calls.
+// * bind returns a new function with a fixed this context and can also fix some or all arguments. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            // document.querySelector('button').addEventListener('click', this.handleClick);
+            document.querySelector('button').addEventListener('click', this.handleClick.bind(this));
+
+        }
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
+
+// bind is used in Javascript and React 
+
+
+
