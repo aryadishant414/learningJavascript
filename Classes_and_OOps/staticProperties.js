@@ -26,7 +26,7 @@ class Teacher extends User {
 }
 
 const iphone = new Teacher("iphone", "i@phone.com")
-console.log(iphone.createId());
+console.log(iphone.createId()); // gives error.  to access this remove the static keyword from that function which we are trying to access.
 
 
 // NOTE : we can ONLY call a 'STATIC' method/function inside the class only.
